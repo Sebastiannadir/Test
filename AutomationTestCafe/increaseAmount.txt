@@ -1,0 +1,23 @@
+Feature: Increase Amount TC
+Como cliente de institución bancaria 
+Quiero solicitar un aumento de cupo de mi tarjeta de crédito 
+Para poder realizar una compra con los beneficios de la tc 
+
+
+dato de prueba (cliente con aumento de cupo aprobado por $1.000.000)
+@ srch01
+Scenario: srch01- Hacer una solicitud de aumento de cupo / pre aprobada 
+Given  Estoy en la página de aumento de cupo de mi tc en el portal del banco 
+and ingreso el monto por $1.500.000  
+and confirmo la operación
+Then visualizo el mensaje de excede el monto aprobado de aumento de cupo tc.
+
+
+dato de prueba (cliente con renta de $1.000.000, cupo pre aprobado por $500.000, moroso)
+@ srch02
+Scenario: srch01- Hacer una solicitud de aumento de cupo
+Given  Estoy en la página de aumento de cupo de mi tc en el portal del banco 
+and ingreso el monto de $500.000 por el cual deseo aumentar el cupo de la tc 
+and confirmo la operación
+and visualizo el motor de riesgo con el mensaje evaluando solicitud 
+Then visualizo el mensaje de operación rechazada, contacte a su ejecutivo. 
