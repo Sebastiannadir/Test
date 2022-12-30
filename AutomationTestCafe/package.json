@@ -13,6 +13,6 @@
     "author": "SebastianReyes",
     "license": "MIT",
     "dependencies": {
-        "testcafe": "^0.22.0"
+        "testcafe": "^2.2.0"
     }
 }
